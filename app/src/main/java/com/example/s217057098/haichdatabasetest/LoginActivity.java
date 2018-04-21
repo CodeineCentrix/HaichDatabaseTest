@@ -389,7 +389,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                   String user = "s217057098";
                   String passw = "";
                   Connection myCon =
-                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098","HeA!ing@22");
+                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098","");
 
                   t.setText("Done  Connection");
                   t.setText(""+3);
