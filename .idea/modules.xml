@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/HaichDatabaseTest.iml" filepath="$PROJECT_DIR$/HaichDatabaseTest.iml" />
+      <module fileurl="file://C:\Users\s217057098\StudioProjects\HaichDatabaseTest\HaichDatabaseTest.iml" filepath="C:\Users\s217057098\StudioProjects\HaichDatabaseTest\HaichDatabaseTest.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\s217057098\StudioProjects\HaichDatabaseTest\app\app.iml" filepath="C:\Users\s217057098\StudioProjects\HaichDatabaseTest\app\app.iml" />
     </modules>
   </component>
 </project>

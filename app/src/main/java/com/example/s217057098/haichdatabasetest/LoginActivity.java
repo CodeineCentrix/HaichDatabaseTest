@@ -29,6 +29,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -90,7 +92,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-               MakeConnection();
+              MakeConnection();
                 //attemptLogin();
             }
         });
@@ -374,13 +376,24 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
               }
               Connection con = null;
               try {
-                  //jdbc:sqlserver://localhost\MSSQLSERVER:1433;databaseName=Northwind
-                  //sqlserver sqlserver
                   t.setText("Attempting Connection");
-                  con =  DriverManager.getConnection("jdbc:sqlserver:// M104-25/MSSQLSERVER;databaseName = Northwind ");
+                //  con =  DriverManager.getConnection("jdbc:sqlserver://M104-09.Mandela.ac.za:1433;databaseName=HaichDB;" +
+                  //        "integratedSecurity=true;encrypt=false;");
+                 // SQLServerDataSource src = new SQLServerDataSource();
+                //  src.setIntegratedSecurity(true);
+               //   src.setServerName("localhost");
+               //   src.setPortNumber(1433);
+                //  src.setDatabaseName("HaichDB");
+                //  con = src.getConnection();
+                  Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
+                  String user = "s217057098";
+                  String passw = "";
+                  Connection myCon =
+                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098","HeA!ing@22");
+
                   t.setText("Done  Connection");
                   t.setText(""+3);
-              } catch (SQLException e) {
+              } catch (Exception e) {
                   t.setText("crashed Connection");
                   Toast.makeText(getApplicationContext(),"Not Connected",Toast.LENGTH_LONG);
                   e.printStackTrace();
