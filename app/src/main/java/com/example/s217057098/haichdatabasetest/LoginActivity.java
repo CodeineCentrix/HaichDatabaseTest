@@ -29,11 +29,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.microsoft.sqlserver.jdbc.SQLServerDataSource;
-
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -387,9 +384,10 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 //  con = src.getConnection();
                   Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
                   String user = "s217057098";
-                  String passw = "";
+                  EditText myPass = findViewById(R.id.password);
+                  String passw =(String) myPass.getText().toString();
                   Connection myCon =
-                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098","");
+                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098",passw);
 
                   t.setText("Done  Connection");
                   t.setText(""+3);
