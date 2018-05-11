@@ -383,14 +383,16 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 //  src.setDatabaseName("HaichDB");
                 //  con = src.getConnection();
                   Class.forName("net.sourceforge.jtds.jdbc.Driver").newInstance();
-                  String user = "s217057098";
+                  String user = "codecentrix";
                   EditText myPass = findViewById(R.id.password);
                   String passw =(String) myPass.getText().toString();
                   Connection myCon =
-                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/HaichDB;instance=MSSQLSERVER","s217057098",passw);
+                          DriverManager.getConnection("jdbc:jtds:sqlserver://10.103.137.7:1433/Codecentrix","codecentrix","password");
+
+
+                  t.setText(""+3);
 
                   t.setText("Done  Connection");
-                  t.setText(""+3);
               } catch (Exception e) {
                   t.setText("crashed Connection");
                   Toast.makeText(getApplicationContext(),"Not Connected",Toast.LENGTH_LONG);
